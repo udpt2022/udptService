@@ -104,7 +104,7 @@ function cartController() {
         listByUserID: async (req, res, next) => {
             try {
                 let cusID = req.params.id;
-                let cartList = await cartModel.find({customerID:cusID})
+                let cartList = await cartModel.find({customerID:cusID}).select({ "productList": 1, "_id": 0})
                 console.log(cartList)
                 return res.status(200).json({cartList})
             } catch (error) {

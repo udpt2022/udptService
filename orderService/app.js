@@ -26,7 +26,7 @@ const connectionParams = {
 
 mongoose.connect(config.URL_MONGODB, connectionParams)
   .then(() => {
-    console.log('Connected to mongoBD!!')
+    console.log('orderService - Connected to mongoBD!!')
   })
   .catch((err) => {
     console.error(`Error connecting to the mongoDb. \n${err}`);

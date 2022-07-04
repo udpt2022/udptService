@@ -6,9 +6,6 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const checkOutRouter = require('./routes/checkOut');
-const oderTicketRouter = require('./routes/orderTicket');
-const cartRouter = require('./routes/cart');
 const app = express();
 
 const config = require('./config')
@@ -26,17 +23,14 @@ const connectionParams = {
 
 mongoose.connect(config.URL_MONGODB, connectionParams)
   .then(() => {
-    console.log('Connected to mongoBD!!')
+    console.log('productService - Connected to mongoBD!!')
   })
   .catch((err) => {
     console.error(`Error connecting to the mongoDb. \n${err}`);
   });
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/checkOut', checkOutRouter);
-app.use('/orderTicket', oderTicketRouter);
-app.use('/cart', cartRouter);
+app.use('/users', usersRouter);;
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

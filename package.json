@@ -1,0 +1,23 @@
+{
+  "name": "udptservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"nodemon ./orderService/bin/www\" \"nodemon ./bin/www\" \"nodemon ./adminService/bin/www\" \"nodemon ./shopService/bin/www\" \"nodemon ./homeService/bin/www\" \"nodemon ./productService/bin/www\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udpt2022/udptService.git"
+  },
+  "author": "huuhoanghcmus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udpt2022/udptService/issues"
+  },
+  "homepage": "https://github.com/udpt2022/udptService#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
